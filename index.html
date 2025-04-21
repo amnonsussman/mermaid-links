@@ -2,51 +2,20 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>השוואת ישויות - דף דוגמה והסבר</title>
+  <title>גרף מותאם אישית</title>
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
     mermaid.initialize({ startOnLoad: true });
   </script>
   <style>
     body {
       direction: rtl;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
       margin: 2em;
       background-color: #f9f9f9;
     }
 
-    h1, h2 {
-      text-align: center;
-    }
-
-    .box {
-      background: #ffffff;
-      border: 1px solid #ccc;
-      padding: 1.5em;
-      border-radius: 10px;
-      margin: 2em auto;
-      max-width: 900px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    ul {
-      list-style-type: square;
-      padding-right: 1.5em;
-    }
-
-    a.button {
-      display: inline-block;
-      padding: 0.8em 1.6em;
-      background: #228B22;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 1em;
-    }
-
-    .center {
+    h1 {
       text-align: center;
     }
 
@@ -56,58 +25,41 @@
       padding: 1em;
       border-radius: 8px;
       overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <h1>השוואת ישויות - דוגמה והסבר</h1>
-
-  <div class="box">
-    <h2>מה אתם רואים כאן?</h2>
-    <p>
-      הדף הזה מציג דוגמה גרפית להשוואה בין שתי ישויות (למשל: דמויות היסטוריות, רעיונות, גישות חשיבה).
-      לכל ישות משויכות תכונות, שמדורגות לפי רמת ההפשטה או ההשפעה שלהן.
-    </p>
-    <p>
-      הצבעים מציינים רמות שונות של תכונה או יכולת:
-    </p>
-    <ul>
-      <li><strong style="color:#228B22;">ירוק כהה</strong> (רמה 1 – <span style="direction:ltr;">lvl1</span>): תכונה יסודית או עליונה – כמו אינטליגנציה, תודעה, מטה-קוגניציה.</li>
-      <li><strong style="color:#7CFC00;">ירוק בהיר</strong> (רמה 2 – <span style="direction:ltr;">lvl2</span>): תכונה נגזרת – כמו יכולת חישוב, חוכמה מוסרית.</li>
-      <li><strong>החצים</strong>: מצביעים על קשרי סיבה־תוצאה בין התכונות.</li>
-    </ul>
+  <h1>תצוגת גרף מותאם</h1>
+  <div id="output">
+    <pre class="mermaid" id="graphArea">ממתין לטעינת גרף...</pre>
   </div>
 
-  <div class="box">
-    <h2>דוגמה קצרה להשוואה</h2>
-    <pre class="mermaid">
-      graph TD
-      classDef lvl1 fill:#228B22,stroke:#333;
-      classDef lvl2 fill:#7CFC00,stroke:#333;
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const codeParam = params.get("code");
 
-      subgraph איינשטיין
-        E_INT["אינטליגנציה<br/>(גבוהה)"]:::lvl1
-        E_WIS["חוכמה<br/>(פילוסופית)"]:::lvl2
-      end
-
-      subgraph גנדי
-        G_INT["אינטליגנציה<br/>(גבוהה)"]:::lvl1
-        G_WIS["חוכמה<br/>(לא אלימה)"]:::lvl2
-      end
-
-      E_INT --> E_WIS
-      G_INT --> G_WIS
-    </pre>
-  </div>
-
-  <div class="box center">
-    <h2>רוצה ליצור גרף משלך?</h2>
-    <p>העתק את הדוגמה, הדבק בעורך, וערוך את השמות והתכונות בהתאם.</p>
-    <a class="button" href="https://mermaid.live/edit" target="_blank">
-      פתח עורך Mermaid ריק
-    </a>
-  </div>
+    if (codeParam) {
+      const decoded = decodeURIComponent(codeParam);
+      document.getElementById("graphArea").innerText = decoded;
+    } else {
+      document.getElementById("output").innerHTML = `
+        <p class="error">לא סופק קוד גרף בכתובת. אנא הוסף ?code=...</p>
+        <p style="text-align:center;">
+          לדוגמה:
+          <br>
+          <code>?code=graph%20TD%0AA%5B%22פיל%22%5D--%3E%20B%5B%22חזק%22%5D</code>
+        </p>
+      `;
+    }
+  </script>
 
 </body>
 </html>
