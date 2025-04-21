@@ -1,31 +1,47 @@
-<!DOCTYPE html>
-<html lang="he">
-<head>
-  <meta charset="UTF-8">
-  <title>השוואת ישויות</title>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: "default" });
-  </script>
-</head>
-<body>
-  <h1 style="text-align:center;">השוואה בין פיל לנחש</h1>
-  <pre class="mermaid">
-    %%{init: {"theme": "default"}}%%
-    classDiagram
-      class "פיל 🐘" {
-        +מהלך בגלוי
-        +חזק פיזית
-        +חברתי
-        +מוביל עדר
-      }
+graph TD
 
-      class "נחש 🐍" {
-        +מתחבא ומגיח
-        +משתק בארס
-        +בודד ומתוחכם
-        +פועל לבד
-      }
-  </pre>
-</body>
-</html>
+%% סטלין (שמאל)
+S_int("אינטליגנציה<br/>(מתונה)"):::lvl2
+S_tho("מחשבה<br/>(מתונה)"):::lvl2
+S_cal("יכולת חישוב<br/>(גבוהה)"):::lvl1
+S_wis("חוכמה<br/>(חלשה)"):::lvl4
+S_meta("מטה־קוגניציה<br/>(אפסית)"):::lvl3
+S_intu("אינטואיציה<br/>(חלשה)"):::lvl4
+S_con("תודעה<br/>(חלשה)"):::lvl4
+S_awa("מודעות<br/>(חלשה)"):::lvl4
+S_rec("הכרה<br/>(אפסית)"):::lvl3
+
+S_int --> S_tho
+S_tho --> S_cal
+S_int --> S_wis
+S_wis --> S_meta
+S_wis --> S_intu
+S_con --> S_awa
+S_awa --> S_rec
+S_meta --> S_awa
+
+%% צרצ'יל (ימין)
+C_int("אינטליגנציה<br/>(גבוהה)"):::lvl1
+C_tho("מחשבה<br/>(גבוהה)"):::lvl1
+C_cal("יכולת חישוב<br/>(מתונה)"):::lvl2
+C_wis("חוכמה<br/>(גבוהה)"):::lvl1
+C_meta("מטה־קוגניציה<br/>(גבוהה)"):::lvl1
+C_intu("אינטואיציה<br/>(מתונה)"):::lvl2
+C_con("תודעה<br/>(גבוהה)"):::lvl1
+C_awa("מודעות<br/>(גבוהה)"):::lvl1
+C_rec("הכרה<br/>(מתונה)"):::lvl2
+
+C_int --> C_tho
+C_tho --> C_cal
+C_int --> C_wis
+C_wis --> C_meta
+C_wis --> C_intu
+C_con --> C_awa
+C_awa --> C_rec
+C_meta --> C_awa
+
+%% סגנונות
+classDef lvl1 fill:#228B22,color:#fff
+classDef lvl2 fill:#90EE90,color:#000
+classDef lvl3 fill:#FFD700,color:#000
+classDef lvl4 fill:#FFA500,color:#000
