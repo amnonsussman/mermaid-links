@@ -2,25 +2,56 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>השוואת גגגטראמפ וביידן</title>
+  <title>איינשטיין מול גנדי</title>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true, theme: "default" });
   </script>
+  <style>
+    body { direction: rtl; font-family: sans-serif; }
+    h1 { text-align: center; }
+  </style>
 </head>
 <body>
-  <h1 style="text-align:center;">השוואה בין טרגגגאמפ לביידן</h1>
+  <h1>השוואת מבני תודעה: איינשטיין מול גנדי</h1>
   <pre class="mermaid">
-graph TD
-  T[Trump] --> T1[Bold speech]
-  T --> T2[Power-focused]
-  T --> T3[Big ego]
-  T --> T4[Provocative style]
+    graph TD
+    classDef lvl1 fill:#228B22,stroke:#333;
+    classDef lvl2 fill:#7CFC00,stroke:#333;
 
-  B[Biden] --> B1[Calm tone]
-  B --> B2[Consensus seeker]
-  B --> B3[Political experience]
-  B --> B4[Cautious leader]
-  </pre>
-</body>
-</html>
+    subgraph Einstein["אלברט איינשטיין"]
+      e_int["אינטליגנציה<br/>(גבוהה)"]:::lvl1
+      e_con["תודעה<br/>(קוסמית)"]:::lvl1
+      e_wis["חוכמה<br/>(פילוסופית)"]:::lvl2
+      e_thi["מחשבה<br/>(תיאורטית)"]:::lvl1
+      e_awa["מודעות<br/>(עולמית)"]:::lvl1
+      e_cal["יכולת חישוב<br/>(אינטואיטיבית)"]:::lvl2
+      e_rec["הכרה<br/>(חדשנית)"]:::lvl1
+      e_meta["מטה־קוגניציה<br/>(עמוקה)"]:::lvl1
+      e_intu["אינטואיציה<br/>(חזקה)"]:::lvl1
+    end
+
+    subgraph Gandhi["מהטמה גנדי"]
+      g_int["אינטליגנציה<br/>(גבוהה)"]:::lvl1
+      g_con["תודעה<br/>(פילנתרופית)"]:::lvl1
+      g_wis["חוכמה<br/>(לא אלימה)"]:::lvl1
+      g_thi["מחשבה<br/>(מוסרית)"]:::lvl2
+      g_awa["מודעות<br/>(חברתית)"]:::lvl2
+      g_cal["יכולת חישוב<br/>(ערכית)"]:::lvl2
+      g_rec["הכרה<br/>(אנושית)"]:::lvl2
+      g_meta["מטה־קוגניציה<br/>(משקפת)"]:::lvl2
+      g_intu["אינטואיציה<br/>(עמוקה)"]:::lvl1
+    end
+
+    e_int -->|מובילה לחשיבה| e_thi
+    e_thi -->|מכילה חישוב| e_cal
+    e_int -->|מאפשרת חוכמה| e_wis
+    e_wis -->|משתמשת במטה־קוגניציה| e_meta
+    e_wis -->|מתבטאת כאינטואיציה| e_intu
+    e_con -->|כוללת מודעות| e_awa
+    e_awa -->|מובילה להכרה| e_rec
+    e_meta -->|מעמיקה את המודעות| e_awa
+
+    g_int -->|מובילה לחשיבה| g_thi
+    g_thi -->|מכילה חישוב| g_cal
+    g_int -->|מאפשרת חוכמה|_
