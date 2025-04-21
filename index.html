@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>גרף מותאם אישית</title>
+  <title>בדיקת גרף בעברית</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
     mermaid.initialize({ startOnLoad: true });
@@ -12,54 +12,26 @@
       direction: rtl;
       font-family: sans-serif;
       margin: 2em;
-      background-color: #f9f9f9;
     }
-
     h1 {
       text-align: center;
     }
-
     pre.mermaid {
       direction: ltr;
       background: #f0f0f0;
       padding: 1em;
       border-radius: 8px;
-      overflow-x: auto;
-      white-space: pre-wrap;
-    }
-
-    .error {
-      color: red;
-      text-align: center;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <h1>תצוגת גרף מותאם</h1>
-  <div id="output">
-    <pre class="mermaid" id="graphArea">ממתין לטעינת גרף...</pre>
-  </div>
+  <h1>בדיקת תצוגת גרף בעברית</h1>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const codeParam = params.get("code");
-
-    if (codeParam) {
-      const decoded = decodeURIComponent(codeParam);
-      document.getElementById("graphArea").innerText = decoded;
-    } else {
-      document.getElementById("output").innerHTML = `
-        <p class="error">לא סופק קוד גרף בכתובת. אנא הוסף ?code=...</p>
-        <p style="text-align:center;">
-          לדוגמה:
-          <br>
-          <code>?code=graph%20TD%0AA%5B%22פיל%22%5D--%3E%20B%5B%22חזק%22%5D</code>
-        </p>
-      `;
-    }
-  </script>
+  <pre class="mermaid">
+graph TD
+A["פיל"] --> B["חזק"]
+  </pre>
 
 </body>
 </html>
