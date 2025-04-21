@@ -7,24 +7,20 @@
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true, theme: "default" });
   </script>
-  <style>
-    body { direction: rtl; font-family: sans-serif; }
-    h1 { text-align: center; }
-  </style>
 </head>
 <body>
-  <h1>השוואה בין טראמפ לביידן</h1>
+  <h1 style="text-align:center;">השוואה בין טראמפ לביידן</h1>
   <pre class="mermaid">
-    graph TD
-      T1["טראמפ"] --> T2["תקשורת בוטה"]
-      T1 --> T3["התמקדות בכוח"]
-      T1 --> T4["אגו דומיננטי"]
-      T1 --> T5["סגנון פרובוקטיבי"]
+graph TD
+  T[Trump] --> T1[Bold speech]
+  T --> T2[Power-focused]
+  T --> T3[Big ego]
+  T --> T4[Provocative style]
 
-      B1["ביידן"] --> B2["שפה רגועה"]
-      B1 --> B3["פונה לקונצנזוס"]
-      B1 --> B4["ניסיון פוליטי עשיר"]
-      B1 --> B5["מנהל זהיר"]
+  B[Biden] --> B1[Calm tone]
+  B --> B2[Consensus seeker]
+  B --> B3[Political experience]
+  B --> B4[Cautious leader]
   </pre>
 </body>
 </html>
