@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>איינשטיין מול גנדי</title>
+  <title>השוואת טראמפ וביידן</title>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true, theme: "default" });
@@ -10,59 +10,21 @@
   <style>
     body { direction: rtl; font-family: sans-serif; }
     h1 { text-align: center; }
-    pre { font-size: 0.9em; }
   </style>
 </head>
 <body>
-  <h1>השוואת מבני תודעה: איינשטיין מול גנדי</h1>
+  <h1>השוואה בין טראמפ לביידן</h1>
   <pre class="mermaid">
     graph TD
-    classDef lvl1 fill:#228B22,stroke:#333;
-    classDef lvl2 fill:#7CFC00,stroke:#333;
-    classDef lvl3 fill:#FFFF66,stroke:#000;
-    classDef lvl4 fill:#FFA500,stroke:#000;
+      T1["טראמפ"] --> T2["תקשורת בוטה"]
+      T1 --> T3["התמקדות בכוח"]
+      T1 --> T4["אגו דומיננטי"]
+      T1 --> T5["סגנון פרובוקטיבי"]
 
-    subgraph אלברט איינשטיין
-      E_INT["אינטליגנציה<br/>(גבוהה)"]:::lvl1
-      E_CON["תודעה<br/>(קוסמית)"]:::lvl1
-      E_WIS["חוכמה<br/>(פילוסופית)"]:::lvl2
-      E_THI["מחשבה<br/>(תיאורטית)"]:::lvl1
-      E_AWA["מודעות<br/>(עולמית)"]:::lvl1
-      E_CAL["יכולת חישוב<br/>(אינטואיטיבית)"]:::lvl2
-      E_REC["הכרה<br/>(חדשנית)"]:::lvl1
-      E_META["מטה־קוגניציה<br/>(עמוקה)"]:::lvl1
-      E_INTU["אינטואיציה<br/>(חזקה)"]:::lvl1
-    end
-
-    subgraph מהטמה גנדי
-      G_INT["אינטליגנציה<br/>(גבוהה)"]:::lvl1
-      G_CON["תודעה<br/>(פילנתרופית)"]:::lvl1
-      G_WIS["חוכמה<br/>(לא אלימה)"]:::lvl1
-      G_THI["מחשבה<br/>(מוסרית)"]:::lvl2
-      G_AWA["מודעות<br/>(חברתית)"]:::lvl2
-      G_CAL["יכולת חישוב<br/>(ערכית)"]:::lvl2
-      G_REC["הכרה<br/>(אנושית)"]:::lvl2
-      G_META["מטה־קוגניציה<br/>(משקפת)"]:::lvl2
-      G_INTU["אינטואיציה<br/>(עמוקה)"]:::lvl1
-    end
-
-    E_INT -->|מובילה לחשיבה| E_THI
-    E_THI -->|מכילה חישוב| E_CAL
-    E_INT -->|מאפשרת חוכמה| E_WIS
-    E_WIS -->|משתמשת במטה־קוגניציה| E_META
-    E_WIS -->|מתבטאת כאינטואיציה| E_INTU
-    E_CON -->|כוללת מודעות| E_AWA
-    E_AWA -->|מובילה להכרה| E_REC
-    E_META -->|מעמיקה את המודעות| E_AWA
-
-    G_INT -->|מובילה לחשיבה| G_THI
-    G_THI -->|מכילה חישוב| G_CAL
-    G_INT -->|מאפשרת חוכמה| G_WIS
-    G_WIS -->|משתמשת במטה־קוגניציה| G_META
-    G_WIS -->|מתבטאת כאינטואיציה| G_INTU
-    G_CON -->|כוללת מודעות| G_AWA
-    G_AWA -->|מובילה להכרה| G_REC
-    G_META -->|מעמיקה את המודעות| G_AWA
+      B1["ביידן"] --> B2["שפה רגועה"]
+      B1 --> B3["פונה לקונצנזוס"]
+      B1 --> B4["ניסיון פוליטי עשיר"]
+      B1 --> B5["מנהל זהיר"]
   </pre>
 </body>
 </html>
