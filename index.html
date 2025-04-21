@@ -2,66 +2,115 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>איינשטיין מול גנדי</title>
+  <title>השוואת ישויות - דף דוגמה והסבר</title>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: "default" });
+    mermaid.initialize({ startOnLoad: true });
   </script>
   <style>
-    body { direction: rtl; font-family: sans-serif; }
-    h1 { text-align: center; }
+    body {
+      direction: rtl;
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f9f9f9;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .box {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      padding: 1.5em;
+      border-radius: 10px;
+      margin: 2em auto;
+      max-width: 900px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    ul {
+      list-style-type: square;
+      padding-right: 1.5em;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 0.8em 1.6em;
+      background: #228B22;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    pre.mermaid {
+      direction: ltr;
+      background: #f0f0f0;
+      padding: 1em;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
   </style>
 </head>
 <body>
-  <h1>השוואת מבני תודעה: איינשטיין מול גנדי</h1>
-  <pre class="mermaid">
-    graph TD
-    classDef lvl1 fill:#228B22,stroke:#333;
-    classDef lvl2 fill:#7CFC00,stroke:#333;
 
-    subgraph Einstein["אלברט איינשטיין"]
-      e_int["אינטליגנציה<br/>(גבוהה)"]:::lvl1
-      e_con["תודעה<br/>(קוסמית)"]:::lvl1
-      e_wis["חוכמה<br/>(פילוסופית)"]:::lvl2
-      e_thi["מחשבה<br/>(תיאורטית)"]:::lvl1
-      e_awa["מודעות<br/>(עולמית)"]:::lvl1
-      e_cal["יכולת חישוב<br/>(אינטואיטיבית)"]:::lvl2
-      e_rec["הכרה<br/>(חדשנית)"]:::lvl1
-      e_meta["מטה־קוגניציה<br/>(עמוקה)"]:::lvl1
-      e_intu["אינטואיציה<br/>(חזקה)"]:::lvl1
-    end
+  <h1>השוואת ישויות - דוגמה והסבר</h1>
 
-    subgraph Gandhi["מהטמה גנדי"]
-      g_int["אינטליגנציה<br/>(גבוהה)"]:::lvl1
-      g_con["תודעה<br/>(פילנתרופית)"]:::lvl1
-      g_wis["חוכמה<br/>(לא אלימה)"]:::lvl1
-      g_thi["מחשבה<br/>(מוסרית)"]:::lvl2
-      g_awa["מודעות<br/>(חברתית)"]:::lvl2
-      g_cal["יכולת חישוב<br/>(ערכית)"]:::lvl2
-      g_rec["הכרה<br/>(אנושית)"]:::lvl2
-      g_meta["מטה־קוגניציה<br/>(משקפת)"]:::lvl2
-      g_intu["אינטואיציה<br/>(עמוקה)"]:::lvl1
-    end
+  <div class="box">
+    <h2>מה אתם רואים כאן?</h2>
+    <p>
+      הדף הזה מציג דוגמה גרפית להשוואה בין שתי ישויות (למשל: דמויות היסטוריות, רעיונות, גישות חשיבה).
+      לכל ישות משויכות תכונות, שמדורגות לפי רמת ההפשטה או ההשפעה שלהן.
+    </p>
+    <p>
+      הצבעים מציינים רמות שונות של תכונה או יכולת:
+    </p>
+    <ul>
+      <li><strong style="color:#228B22;">ירוק כהה</strong> (רמה 1 – <span style="direction:ltr;">lvl1</span>): תכונה יסודית או עליונה – כמו אינטליגנציה, תודעה, מטה-קוגניציה.</li>
+      <li><strong style="color:#7CFC00;">ירוק בהיר</strong> (רמה 2 – <span style="direction:ltr;">lvl2</span>): תכונה נגזרת – כמו יכולת חישוב, חוכמה שימושית או מוסרית.</li>
+      <li><strong>החצים</strong>: מצביעים על קשרי סיבה־תוצאה בין התכונות.</li>
+    </ul>
+  </div>
 
-    %% חיבורים איינשטיין
-    e_int -->|מובילה לחשיבה| e_thi
-    e_thi -->|מכילה חישוב| e_cal
-    e_int -->|מאפשרת חוכמה| e_wis
-    e_wis -->|משתמשת במטה־קוגניציה| e_meta
-    e_wis -->|מתבטאת כאינטואיציה| e_intu
-    e_con -->|כוללת מודעות| e_awa
-    e_awa -->|מובילה להכרה| e_rec
-    e_meta -->|מעמיקה את המודעות| e_awa
+  <div class="box">
+    <h2>דוגמה קצרה להשוואה</h2>
+    <pre class="mermaid">
+      graph TD
+      classDef lvl1 fill:#228B22,stroke:#333;
+      classDef lvl2 fill:#7CFC00,stroke:#333;
 
-    %% חיבורים גנדי – בסדר זהה
-    g_int -->|מובילה לחשיבה| g_thi
-    g_thi -->|מכילה חישוב| g_cal
-    g_int -->|מאפשרת חוכמה| g_wis
-    g_wis -->|משתמשת במטה־קוגניציה| g_meta
-    g_wis -->|מתבטאת כאינטואיציה| g_intu
-    g_con -->|כוללת מודעות| g_awa
-    g_awa -->|מובילה להכרה| g_rec
-    g_meta -->|מעמיקה את המודעות| g_awa
-  </pre>
+      subgraph איינשטיין
+        E_INT["אינטליגנציה<br/>(גבוהה)"]:::lvl1
+        E_WIS["חוכמה<br/>(פילוסופית)"]:::lvl2
+      end
+
+      subgraph גנדי
+        G_INT["אינטליגנציה<br/>(גבוהה)"]:::lvl1
+        G_WIS["חוכמה<br/>(לא אלימה)"]:::lvl2
+      end
+
+      E_INT --> E_WIS
+      G_INT --> G_WIS
+    </pre>
+  </div>
+
+  <div class="box center">
+    <h2>עכשיו תורכם!</h2>
+    <p>כדי ליצור גרף השוואה משלכם:</p>
+    <ol>
+      <li>העתיקו את תבנית הגרף שראיתם כאן.</li>
+      <li>הדביקו אותה בעורך Mermaid.</li>
+      <li>שנו את שמות הישויות והתכונות לפי הצורך.</li>
+    </ol>
+    <a class="button" href="https://mermaid.live/edit" target="_blank">למעבר לעורך Mermaid ריק</a>
+  </div>
+
 </body>
 </html>
